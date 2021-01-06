@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.lainlain.dhunter.ListDatabaseHunterActivity">
+
+    <include layout="@layout/view_toolbar_primary_right"/>
+
+    <TextView
+        android:id="@+id/tvdateToday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="@color/colorWhite1"
+        android:paddingLeft="30dp"
+        android:paddingTop="@dimen/padding_3dp"
+        android:paddingBottom="@dimen/padding_5dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/roboto_bold"
+        android:background="@color/colorPrimary"
+        android:text="Jumat, 6 Desember 2019"/>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvListdbHunter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:paddingTop="5dp"
+            android:layout_marginBottom="5dp"
+            tools:listitem="@layout/item_database_hunter"
+            android:overScrollMode="never"
+            tools:ignore="MissingConstraints" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <LinearLayout
+        android:id="@+id/lyEmptyResult"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite1"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_empty_result"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/emptyPage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite1"
+        android:gravity="center"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:src="@drawable/ic_generic_error_shot"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/offlinePage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite1"
+        android:gravity="center"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="75dp"
+            android:layout_marginBottom="75dp"
+            android:src="@drawable/ic_offline"/>
+    </LinearLayout>
+</LinearLayout>

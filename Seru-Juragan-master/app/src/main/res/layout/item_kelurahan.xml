@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:weightSum="2"
+    android:padding="@dimen/padding_10dp">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv_desc_kelurahan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kelurahan"
+            android:textSize="16dp"
+            android:textColor="#000000"
+            android:fontFamily="@font/helvetica_neue"/>
+        <TextView
+            android:id="@+id/tvVillageName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mampang Parapatan"
+            android:textSize="16dp"
+            android:textColor="#000000"
+            android:fontFamily="@font/helvetica_neue"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+        <LinearLayout
+            android:id="@+id/layoutDeal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/padding_5dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal"
+            android:background="@drawable/background_rectangle_round_yellow"
+            tools:ignore="MissingConstraints">
+            <TextView
+                android:textSize="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deal : "
+                android:textColor="#000000"
+                android:fontFamily="@font/helvetica_neue"/>
+            <TextView
+                android:id="@+id/tvDealTotal"
+                android:textSize="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="40"
+                android:textColor="#000000"
+                android:fontFamily="@font/helvetica_neue"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layoutTunda"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:padding="@dimen/padding_5dp"
+            android:orientation="horizontal"
+            android:background="@drawable/background_rectangle_round_orange"
+            tools:ignore="MissingConstraints">
+            <TextView
+                android:textSize="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tunda : "
+                android:textColor="#000000"
+                android:fontFamily="@font/helvetica_neue"/>
+            <TextView
+                android:id="@+id/tvTundaTotal"
+                android:textSize="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2"
+                android:textColor="#000000"
+                android:fontFamily="@font/helvetica_neue"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

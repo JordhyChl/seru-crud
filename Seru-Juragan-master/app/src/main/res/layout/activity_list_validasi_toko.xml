@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.toko.validasi.ListValidasiTokoActivity">
+
+    <include layout="@layout/view_toolbar_primary_right"/>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tvdateToday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="@color/colorWhite1"
+        android:paddingLeft="30dp"
+        android:paddingTop="@dimen/padding_3dp"
+        android:paddingBottom="@dimen/padding_5dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/roboto_bold"
+        android:background="@color/colorPrimary"
+        android:text="Jumat, 6 Desember 2019"/>
+
+    <RelativeLayout
+        android:id="@+id/lyListValidasi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/lyFilterMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/layoutKecamatan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="3"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Kecamatan"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/material_light_black"
+                    android:gravity="center|start"/>
+                <Spinner
+                    android:id="@+id/spKecamatan"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/bg_spinner_default"/>
+<!--                <Button-->
+<!--                    android:id="@+id/btnKec"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    android:layout_weight="1.7"-->
+<!--                    android:layout_marginRight="5dp"-->
+<!--                    android:background="@drawable/bg_search_rounded_grey"/>-->
+<!--                <ImageView-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="0.3"-->
+<!--                    android:src="@drawable/icon_expand_dropdown"-->
+<!--                    android:layout_gravity="center"/>-->
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutKelurahan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="3"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:paddingBottom="@dimen/padding_5dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Kelurahan"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/material_light_black"
+                    android:gravity="center|start"/>
+                <Spinner
+                    android:id="@+id/spKelurahan"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/bg_spinner_default"/>
+<!--                <ImageView-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="0.3"-->
+<!--                    android:src="@drawable/icon_expand_dropdown"-->
+<!--                    android:layout_gravity="center"/>-->
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lyMapFilter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="3"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:paddingBottom="@dimen/padding_10dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Lokasi Toko"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/material_light_black"
+                    android:gravity="center|start"/>
+                <Button
+                    android:id="@+id/btnOpenMapsFilter"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="2"
+                    android:text="Lihat Peta"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/bg_search_rounded_grey"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/btnFilterByArea"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_view_30dp"
+                android:layout_marginTop="@dimen/margin_5dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:gravity="center"
+                android:visibility="gone"
+                android:background="@drawable/bg_search_rounded_grey"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Klik untuk kembali lihat berdasarkan Area"/>
+
+            <LinearLayout
+                android:id="@+id/lyMapsMarker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/padding_10dp"
+                android:paddingRight="@dimen/padding_10dp"
+                android:paddingTop="@dimen/padding_5dp"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <fragment
+                    android:id="@+id/maps"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_weight="4"
+                    class="com.google.android.gms.maps.SupportMapFragment"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/padding_5dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/btnNavigasi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_5dp"
+                        android:enabled="false"
+                        android:src="@drawable/icons8_user_location"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Perbarui Lokasi"/>
+                    <TextView
+                        android:id="@+id/btnExtMaps"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="@dimen/margin_5dp"
+                        android:gravity="center"
+                        android:text="Perbesar Peta"
+                        android:textSize="12dp"
+                        android:background="@drawable/bg_search_rounded_grey"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/customGrey"/>
+        </LinearLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lyFilterMenu"
+            android:layout_above="@+id/lyFooter"
+            android:orientation="vertical">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvListValidasiToko"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:paddingTop="5dp"
+                android:layout_marginBottom="5dp"
+                tools:listitem="@layout/item_toko_validasi"
+                android:overScrollMode="never"
+                tools:ignore="MissingConstraints" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <LinearLayout
+            android:id="@+id/lyEmptyResult"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/lyFilterMenu"
+            android:layout_above="@+id/lyFooter"
+            android:background="@color/colorWhite1"
+            android:gravity="center"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/img_empty_result"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lyFooter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@color/colorBlack"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto_bold"
+                android:background="@color/customGrey2"
+                android:layout_gravity="bottom"
+                android:gravity="center_horizontal"
+                android:text="Ketuk Nama Toko untuk detail dan validasi"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/emptyPage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite1"
+        android:gravity="center"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:src="@drawable/ic_generic_error_shot"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/offlinePage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite1"
+        android:gravity="center"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="75dp"
+            android:layout_marginBottom="75dp"
+            android:src="@drawable/ic_offline"/>
+    </LinearLayout>
+</LinearLayout>

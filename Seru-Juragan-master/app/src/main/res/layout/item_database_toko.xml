@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/layoutDescToko"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/padding_5dp"
+        android:layout_marginLeft="@dimen/margin_10dp"
+        android:layout_marginRight="@dimen/margin_10dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tvTokoId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margin_5dp"
+            android:text="[12345678]"
+            android:textSize="14dp"
+            android:textColor="#000000"
+            android:fontFamily="@font/roboto_regular"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:layout_marginLeft="@dimen/margin_10dp"
+        android:layout_marginRight="@dimen/margin_10dp"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tvTokoName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Toko Jaya Sentosa"
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:fontFamily="@font/roboto_bold"/>
+            <LinearLayout
+                android:id="@+id/layoutPemilik"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:layout_marginRight="3dp"
+                    android:text="Nama Pemilik"
+                    android:textSize="12dp"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/roboto_regular"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="1dp"
+                    android:text=" : "
+                    android:textSize="12dp"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/roboto_bold"/>
+                <TextView
+                    android:id="@+id/tvTokoOwner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Pak Jatis"
+                    android:textSize="14dp"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/roboto_bold"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layoutTglSurvey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:layout_marginRight="3dp"
+                    android:text="Tanggal tervalidasi"
+                    android:textSize="12dp"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/roboto_regular"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="1dp"
+                    android:text=" : "
+                    android:textSize="12dp"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/roboto_bold"/>
+                <TextView
+                    android:id="@+id/tvJoinDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="03 Agust 2019"
+                    android:textSize="12dp"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/roboto_bold"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/customGrey"/>
+
+</LinearLayout>

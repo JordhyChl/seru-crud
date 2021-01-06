@@ -1,0 +1,1452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.toko.tambah.TambahTokoActivity">
+
+    <include layout="@layout/view_toolbar_primary_right"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tvdateToday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@color/colorWhite1"
+                android:paddingLeft="30dp"
+                android:paddingTop="@dimen/padding_3dp"
+                android:paddingBottom="@dimen/padding_5dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto_bold"
+                android:background="@color/colorPrimary"
+                android:text="Jumat, 6 Desember 2019"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/colorWhite1">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvTimeline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/colorWhite1"
+                    android:padding="@dimen/padding_5dp"
+                    android:clipToPadding="false"
+                    tools:listitem="@layout/item_timeline_horizontal"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_desc_checkin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/colorBlack"
+                android:paddingLeft="30dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto_bold"
+                android:background="@color/customGrey2"
+                android:text="Check In"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_5dp"
+                android:layout_marginBottom="@dimen/margin_5dp"
+                android:paddingLeft="@dimen/padding_10dp"
+                android:paddingRight="@dimen/padding_10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ly_headerCheckin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:fontFamily="@font/roboto_bold_condensed"
+                        android:text="Geotagging" />
+
+                    <TextView
+                        android:id="@+id/tvCurLat"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Latitude"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvCurLong"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Longitude"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <fragment
+                        android:id="@+id/map"
+                        android:layout_width="0dp"
+                        android:layout_height="130dp"
+                        android:layout_weight="2"
+                        class="com.google.android.gms.maps.SupportMapFragment" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/btnCheckin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:background="@color/material_green_300"
+                            android:text="Check In"
+                            android:fontFamily="@font/roboto_bold"
+                            android:textColor="@color/colorWhite1"/>
+
+                        <TextView
+                            android:id="@+id/tv_checkinInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:visibility="visible"
+                            android:text="Tunggu Hingga Tombol berwarna Hijau" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_desc_data_toko"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/colorBlack"
+                android:paddingLeft="30dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto_bold"
+                android:background="@color/customGrey2"
+                android:text="Data Toko"/>
+
+            <LinearLayout
+                android:id="@+id/sec_data_toko_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <LinearLayout
+                    android:id="@+id/layoutKodeToko"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:paddingLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tv_desc_kode_toko"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.8"
+                        android:text="Kode Toko"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/colorBlack"/>
+                    <TextView
+                        android:visibility="gone"
+                        android:id="@+id/tvKodeToko"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="3243214"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/colorBlack"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutNamaToko"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:paddingLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tv_desc_nama_toko"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.8"
+                        android:text="Nama Toko"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/colorBlack"/>
+                    <EditText
+                        android:id="@+id/edtNamatoko"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="1.2"
+                        android:paddingLeft="@dimen/padding_5dp"
+                        android:paddingRight="@dimen/padding_5dp"
+                        android:background="@drawable/bg_form_rounded_transparent"
+                        android:fontFamily="@font/roboto_regular"
+                        android:hint="Isi Nama Toko"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="14dp"
+                        android:inputType="text" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutNamaPemilik"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:paddingLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tv_desc_nama_pemilik"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.8"
+                        android:text="Nama Pemilik"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/colorBlack"/>
+                    <EditText
+                        android:id="@+id/edtNamaPemilik"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:paddingLeft="@dimen/padding_5dp"
+                        android:paddingRight="@dimen/padding_5dp"
+                        android:layout_weight="1.2"
+                        android:background="@drawable/bg_form_rounded_transparent"
+                        android:fontFamily="@font/roboto_regular"
+                        android:hint="Isi Nama Pemilik Toko"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="14dp"
+                        android:inputType="text"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutAlamat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:paddingLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tv_desc_alamat"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.8"
+                        android:text="Alamat"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/colorBlack"/>
+                    <EditText
+                        android:id="@+id/edtAlamat"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:paddingLeft="@dimen/padding_5dp"
+                        android:paddingRight="@dimen/padding_5dp"
+                        android:layout_weight="1.2"
+                        android:background="@drawable/bg_form_rounded_transparent"
+                        android:fontFamily="@font/roboto_regular"
+                        android:lines="4"
+                        android:maxLines="6"
+                        android:gravity="top|left"
+                        android:scrollbars="vertical"
+                        android:hint="Contoh : Jl. Kemerdekaan No. 17, Rt.008 Rw. 045, Jakarta Pusat"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="14dp"
+                        android:inputType="textMultiLine"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutNoTelp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:paddingLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.8"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/tv_desc_notelp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:text="No Telp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:textColor="@color/colorBlack"/>
+                        <ImageView
+                            android:id="@+id/phone1Check"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:visibility="gone"
+                            android:paddingRight="@dimen/padding_5dp"
+                            android:src="@drawable/icons8_checkmark_yes"/>
+                    </LinearLayout>
+                    <EditText
+                        android:id="@+id/edtPhone1"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:paddingLeft="@dimen/padding_5dp"
+                        android:paddingRight="@dimen/padding_5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_form_rounded_transparent"
+                        android:fontFamily="@font/roboto_regular"
+                        android:textColor="@color/colorBlack"
+                        android:hint="Isi Nomor Telp. Aktif"
+                        android:digits="0123456789"
+                        android:inputType="number"
+                        android:textSize="14dp"
+                        android:maxLength="15"/>
+                    <ImageView
+                        android:id="@+id/btnValidatePN"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:src="@drawable/icon_search"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutNoTelp2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:paddingLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tv_desc_notelp2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.8"
+                        android:text="No Telp 2"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/colorBlack"/>
+                    <EditText
+                        android:id="@+id/edtPhone2"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:paddingLeft="@dimen/padding_5dp"
+                        android:paddingRight="@dimen/padding_5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_form_rounded_transparent"
+                        android:fontFamily="@font/roboto_regular"
+                        android:textColor="@color/colorBlack"
+                        android:digits="0123456789"
+                        android:inputType="number"
+                        android:textSize="14dp"
+                        android:maxLength="15"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutKecamatan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:paddingLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tv_desc_kecamatan"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.8"
+                        android:text="Kecamatan"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/colorBlack"/>
+                    <Spinner
+                        android:id="@+id/spKecamatan"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="1.2"
+                        android:background="@drawable/bg_spinner_transparent"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutKelurahan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:paddingLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tv_desc_kelurahan"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.8"
+                        android:text="Kelurahan"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/colorBlack"/>
+                    <Spinner
+                        android:id="@+id/spKelurahan"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="1.2"
+                        android:background="@drawable/bg_spinner_transparent"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_desc_keterangan_toko"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/colorBlack"
+                android:paddingLeft="30dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto_bold"
+                android:background="@color/customGrey2"
+                android:text="Keterangan Toko"/>
+
+            <LinearLayout
+                android:id="@+id/sec_ket_toko_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/layoutJenisToko"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="30dp"
+                    android:orientation="vertical"
+                    android:paddingLeft="30dp"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/tv_desc_jenis_toko"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="@string/jenis"
+                        android:textColor="@color/colorBlack" />
+
+                    <io.github.keithyokoma.gridradiogroup.GridRadioGroup
+                        android:id="@+id/rgJenisToko"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:columnCount="2"
+                        app:useDefaultMargins="true"
+                        android:layout_marginTop="5dp">
+
+                        <RadioButton
+                            android:id="@+id/rbTokoGt"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="Toko GT" />
+
+                        <RadioButton
+                            android:id="@+id/rbWarung"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="Warung" />
+
+                        <RadioButton
+                            android:id="@+id/rbKiosPulsa"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="Kios Pulsa" />
+
+                        <RadioButton
+                            android:id="@+id/rbJenisSekolah"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="Sekolah" />
+
+                        <RadioButton
+                            android:id="@+id/rbJenisLainnya"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="Lainnya" />
+                    </io.github.keithyokoma.gridradiogroup.GridRadioGroup>
+                    <EditText
+                        android:id="@+id/edtJenisTokoOther"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/padding_5dp"
+                        android:paddingRight="@dimen/padding_5dp"
+                        android:visibility="gone"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutStatusToko"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="30dp"
+                    android:orientation="vertical"
+                    android:paddingLeft="30dp"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/tvDescStatustoko"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="@string/status"
+                        android:textColor="@color/colorBlack" />
+
+                    <RadioGroup
+                        android:id="@+id/rgStatusToko"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rbHakMilik"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="Hak Milik" />
+
+                        <RadioButton
+                            android:id="@+id/rbSewa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="Sewa" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutTipeJalan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="30dp"
+                    android:orientation="vertical"
+                    android:paddingLeft="30dp"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/tv_desc_tipe_jalan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="@string/tipe_jalan"
+                        android:textColor="@color/colorBlack" />
+
+                    <io.github.keithyokoma.gridradiogroup.GridRadioGroup
+                        android:id="@+id/rgTipeJalan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:columnCount="2"
+                        app:useDefaultMargins="true"
+                        android:layout_marginTop="5dp">
+
+                        <RadioButton
+                            android:id="@+id/rb1mobil"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="1 Mobil" />
+
+                        <RadioButton
+                            android:id="@+id/rb2mobil"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="2 Mobil" />
+
+                        <RadioButton
+                            android:id="@+id/rb1motor"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="1 Motor" />
+
+                        <RadioButton
+                            android:id="@+id/rb2motor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="2 Motor" />
+
+
+                    </io.github.keithyokoma.gridradiogroup.GridRadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutRadius"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="30dp"
+                    android:orientation="vertical"
+                    android:paddingLeft="30dp">
+
+                    <TextView
+                        android:id="@+id/tvDescRadius"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="@string/radius"
+                        android:textColor="@color/colorBlack" />
+
+                    <io.github.keithyokoma.gridradiogroup.GridRadioGroup
+                        android:id="@+id/rgRadius"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:columnCount="2"
+                        app:useDefaultMargins="true"
+                        android:layout_marginTop="5dp">
+
+                        <RadioButton
+                            android:id="@+id/rbSekolah"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="Sekolah" />
+
+                        <RadioButton
+                            android:id="@+id/rbMasjid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="Masjid" />
+
+                        <RadioButton
+                            android:id="@+id/rbLainnya"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="Lainnya" />
+                    </io.github.keithyokoma.gridradiogroup.GridRadioGroup>
+
+                    <EditText
+                        android:id="@+id/edtRadiusOther"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/padding_5dp"
+                        android:paddingRight="@dimen/padding_5dp"
+                        android:visibility="gone"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="30dp"
+                    android:orientation="vertical"
+                    android:paddingLeft="30dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="@string/jual_exist"
+                        android:textColor="@color/colorBlack" />
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+                        <RadioButton
+                            android:id="@+id/rbYaJual"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="Ya" />
+                        <RadioButton
+                            android:id="@+id/rbTidakJual"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="Tidak" />
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"/>
+                    </RadioGroup>
+
+                    <LinearLayout
+                        android:id="@+id/lyCheckboxEs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvDescMacamEskrim"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Jika Ya, Eskrim apa saja?"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:textColor="@color/colorBlack"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="3"
+                            android:orientation="horizontal">
+                            <CheckBox
+                                android:id="@+id/cbEsWalls"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:onClick="onCheckboxClicked"
+                                android:text="Walls"/>
+                            <CheckBox
+                                android:id="@+id/cbEsAice"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:onClick="onCheckboxClicked"
+                                android:text="Aice"/>
+                            <CheckBox
+                                android:id="@+id/cbEsCampina"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:onClick="onCheckboxClicked"
+                                android:text="Campina"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="3"
+                            android:orientation="horizontal">
+                            <CheckBox
+                                android:id="@+id/cbEsGlico"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:onClick="onCheckboxClicked"
+                                android:text="Glico"/>
+                            <CheckBox
+                                android:id="@+id/cbEsOther"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:onClick="onCheckboxClicked"
+                                android:text="Lainnya"/>
+                            <EditText
+                                android:id="@+id/edtCbesOther"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:visibility="gone"
+                                android:layout_weight="1"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutAdaKulkas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:paddingLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tvDescAdaKulkas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/kulkas_exist"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/colorBlack"/>
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:id="@+id/rgAdaKulkas"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+                        <RadioButton
+                            android:id="@+id/rbYaAdaKulkas"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="Ya"/>
+                        <RadioButton
+                            android:id="@+id/rbTidakAdaKulkas"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="Tidak"/>
+                        <TextView
+                            android:id="@+id/fake3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"/>
+                    </RadioGroup>
+
+                    <LinearLayout
+                        android:id="@+id/lyRbTriggerKulkas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/tvDescMacamKulkas"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Jika Ya, Kulkas berapa pintu?"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:textColor="@color/colorBlack"/>
+                        <RadioGroup
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal">
+                            <RadioButton
+                                android:id="@+id/rb1Pintu"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:onClick="onRadioButtonClicked"
+                                android:text="1 Pintu"/>
+                            <RadioButton
+                                android:id="@+id/rb2Pintu"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:onClick="onRadioButtonClicked"
+                                android:text="2 Pintu"/>
+                            <TextView
+                                android:id="@+id/fake4"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"/>
+                        </RadioGroup>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutBersediaBeliPerdana"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:paddingLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tvDescBersediaBeliPerdana"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/beli_paket"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/colorBlack"/>
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:id="@+id/rgBersediaBeliPerdana"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+                        <RadioButton
+                            android:id="@+id/rbYaBersediaPerdana"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="Ya"/>
+                        <RadioButton
+                            android:id="@+id/rbTidakBersediaPerdana"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="Tidak"/>
+                        <TextView
+                            android:id="@+id/fake6"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"/>
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutTersediaTempat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:paddingLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tvDescTersediaTempat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/freezer"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/colorBlack"/>
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:id="@+id/rgTersediaTempat"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+                        <RadioButton
+                            android:id="@+id/rbYaTersediaTempat"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="Ya"/>
+                        <RadioButton
+                            android:id="@+id/rbTidakTersediaTempat"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="Tidak"/>
+                        <TextView
+                            android:id="@+id/fake5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"/>
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutKapasitasListrik"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:paddingLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tvDescKapasitasListrik"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/listrik"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/colorBlack"/>
+                    <io.github.keithyokoma.gridradiogroup.GridRadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rgKapasitasListrik"
+                        app:columnCount="3"
+                        app:useDefaultMargins="true"
+                        android:layout_marginTop="5dp">
+                        <RadioButton
+                            android:id="@+id/rb450va"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="450"/>
+                        <RadioButton
+                            android:id="@+id/rb900va"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="900"/>
+                        <RadioButton
+                            android:id="@+id/rb1300va"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="1300"/>
+                        <RadioButton
+                            android:id="@+id/rb2200va"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="2200"/>
+                        <RadioButton
+                            android:id="@+id/rbMore2200va"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="> 2200"/>
+                    </io.github.keithyokoma.gridradiogroup.GridRadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutFrekuensiMatiListrik"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:paddingLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tvDescFrekMatiListrik"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/blackout"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/colorBlack"/>
+                    <io.github.keithyokoma.gridradiogroup.GridRadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:columnCount="2"
+                        app:useDefaultMargins="true"
+                        android:id="@+id/rgFrekMatiListrik"
+                        android:layout_marginTop="5dp">
+                        <RadioButton
+                            android:id="@+id/rbJarangSekali"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="Jarang Sekali (1x)"/>
+                        <RadioButton
+                            android:id="@+id/rbJarang"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="Jarang (1-2x)"/>
+                        <RadioButton
+                            android:id="@+id/rbSering"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="Sering (3-4x)"/>
+                        <RadioButton
+                            android:id="@+id/rbSeringSekali"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="Sering Sekali (> 4x)"/>
+                    </io.github.keithyokoma.gridradiogroup.GridRadioGroup>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_desc_foto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/colorBlack"
+                android:paddingLeft="30dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto_bold"
+                android:background="@color/customGrey2"
+                android:text="Foto"/>
+
+            <LinearLayout
+                android:id="@+id/sec_foto_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_5dp"
+                android:layout_marginBottom="@dimen/margin_5dp"
+                android:paddingLeft="@dimen/padding_10dp"
+                android:paddingRight="@dimen/padding_10dp"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_20dp"
+                    android:layout_marginRight="@dimen/margin_20dp"
+                    android:layout_marginBottom="@dimen/margin_5dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/margin_5dp"
+                        android:layout_marginRight="@dimen/margin_5dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgOutshop"
+                            android:layout_width="@dimen/size_view_100dp"
+                            android:layout_height="@dimen/size_view_75dp"
+                            android:padding="4dp"
+                            android:src="@drawable/placeholder"
+                            android:scaleType="fitCenter"/>
+                        <TextView
+                            android:id="@+id/tvOutshop"
+                            android:layout_width="@dimen/size_view_100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Luar Toko"
+                            android:fontFamily="@font/roboto_bold_condensed"
+                            android:gravity="center"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/margin_5dp"
+                        android:layout_marginRight="@dimen/margin_5dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgInshop"
+                            android:layout_width="@dimen/size_view_100dp"
+                            android:layout_height="@dimen/size_view_75dp"
+                            android:padding="4dp"
+                            android:src="@drawable/placeholder"
+                            android:scaleType="fitCenter"/>
+                        <TextView
+                            android:id="@+id/tvInshop"
+                            android:layout_width="@dimen/size_view_100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Dalam Toko"
+                            android:fontFamily="@font/roboto_bold_condensed"
+                            android:gravity="center"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_20dp"
+                    android:layout_marginRight="@dimen/margin_20dp"
+                    android:layout_marginBottom="@dimen/margin_5dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/margin_5dp"
+                        android:layout_marginRight="@dimen/margin_5dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgKtp"
+                            android:layout_width="@dimen/size_view_100dp"
+                            android:layout_height="@dimen/size_view_75dp"
+                            android:padding="4dp"
+                            android:src="@drawable/placeholder"
+                            android:scaleType="fitCenter"/>
+                        <TextView
+                            android:id="@+id/tvKtp"
+                            android:layout_width="@dimen/size_view_100dp"
+                            android:layout_height="wrap_content"
+                            android:text="KTP"
+                            android:fontFamily="@font/roboto_bold_condensed"
+                            android:gravity="center"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/margin_5dp"
+                        android:layout_marginRight="@dimen/margin_5dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgSignature"
+                            android:layout_width="@dimen/size_view_100dp"
+                            android:layout_height="@dimen/size_view_75dp"
+                            android:padding="4dp"
+                            android:src="@drawable/icons8_autograph"
+                            android:scaleType="fitCenter"/>
+                        <TextView
+                            android:id="@+id/tvSignature"
+                            android:layout_width="@dimen/size_view_100dp"
+                            android:layout_height="wrap_content"
+                            android:text="TTD Digital"
+                            android:fontFamily="@font/roboto_bold_condensed"
+                            android:gravity="center"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:background="@color/colorGrey6"/>
+
+            <LinearLayout
+                android:id="@+id/sec_validasi_syarat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/layoutStatusValidasiJuragan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:layout_marginTop="@dimen/margin_5dp"
+                    android:orientation="horizontal">
+                    <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:text="Status Validasi Juragan"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/material_light_black"
+                    android:gravity="center|start"/>
+                    <Spinner
+                    android:id="@+id/spStatusValidasi"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/size_view_35dp"
+                    android:layout_weight="1.5"
+                    android:layout_marginRight="2dp"
+                    android:entries="@array/add_status_validasi"
+                    android:background="@drawable/bg_spinner_transparent"/>
+<!--                    <ImageView-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="0.25"-->
+<!--                    android:src="@drawable/icon_expand_dropdown"-->
+<!--                    android:layout_gravity="center"/>-->
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyJadwalPengiriman"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_5dp"
+                    android:weightSum="3"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/desDay"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:layout_marginRight="5dp"
+                        android:text="Jadwal Usul Pengiriman Kabinet"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/material_light_black"
+                        android:gravity="center|start"/>
+                    <TextView
+                        android:id="@+id/tvDay"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:layout_marginRight="5dp"
+                        android:padding="5dp"
+                        android:text="Pilih Tanggal"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/material_light_black"
+                        android:background="@drawable/bg_form_rounded_transparent"
+                        android:layout_gravity="center"
+                        android:gravity="center"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyKabinetMandiri"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_5dp"
+                    android:padding="5dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_rect_border_red">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:text="Kirim kabinet ke Toko secara Mandiri?"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/material_light_black"
+                        android:gravity="center|start"/>
+
+                    <RadioGroup
+                        android:id="@+id/rgKabinetMandiri"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rbYaKirimMandiri"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="Ya" />
+
+                        <RadioButton
+                            android:id="@+id/rbTidakKirimMandiri"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="Tidak" />
+                    </RadioGroup>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/sec_footer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="@dimen/margin_5dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/bg_form_rounded_transparent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tv_desc_keterangan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Catatan Lain - lain (Opsional)"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/material_light_black"/>
+
+                    <EditText
+                        android:id="@+id/edtNoteTambah"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Contoh : Tunda karena banjir"></EditText>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:gravity="center"
+                    android:layout_marginBottom="30dp"
+                    android:orientation="horizontal"
+                    tools:ignore="MissingConstraints">
+                    <Button
+                        android:id="@+id/btnLocalSave"
+                        android:enabled="false"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:visibility="gone"
+                        android:background="@drawable/background_rectangle_round_dark_grey"
+                        android:layout_marginRight="10dp"
+                        android:textColor="@color/colorWhite1"
+                        android:text="Simpan" />
+
+                    <Button
+                        android:id="@+id/btnSubmitSurvey"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/background_rectangle_round_red"
+                        android:textColor="@color/colorWhite1"
+                        android:text="Kirim Data Validasi"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/emptyPage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite1"
+        android:gravity="center"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:src="@drawable/ic_generic_error_shot"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/offlinePage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite1"
+        android:gravity="center"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="75dp"
+            android:layout_marginBottom="75dp"
+            android:src="@drawable/ic_offline"/>
+    </LinearLayout>
+</LinearLayout>

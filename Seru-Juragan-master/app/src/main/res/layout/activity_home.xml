@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/root_layout"
+    tools:context=".ui.home.HomeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_10dp"
+        android:background="@color/colorPrimary">
+        <TextView
+            android:id="@+id/tvGreetings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:layout_gravity="start"
+            android:textSize="15sp"
+            android:text=" - "
+            android:textStyle="bold"
+            android:textColor="@color/colorWhite1"
+            android:fontFamily="@font/roboto_medium"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_juragan_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:textSize="10pt"
+                android:text="Nama Juragan "
+                android:textColor="@color/colorWhite1"
+                android:fontFamily="@font/unilever_illustrative_type"
+                android:textAllCaps="false"/>
+
+            <TextView
+                android:id="@+id/tv_juragan_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:textSize="6pt"
+                android:textStyle="bold"
+                android:text="(802378)"
+                android:textColor="@color/colorWhite1"
+                android:fontFamily="@font/roboto_bold"
+                android:textAllCaps="false"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvdateToday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="start"
+            android:textSize="8pt"
+            android:text="Jumat, 6 Desember 2019"
+            android:textColor="@color/colorWhite1"
+            android:fontFamily="@font/roboto_bold_condensed"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lyTaskInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_5dp"
+        android:layout_marginBottom="@dimen/margin_5dp"
+        android:paddingRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:paddingLeft="10dp"
+            android:textSize="8pt"
+            android:textColor="@color/colorDarkGrey"
+            android:text="Anda mempunyai "
+            android:fontFamily="@font/roboto_bold"/>
+        <TextView
+            android:id="@+id/tv_total_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:textSize="8pt"
+            android:textColor="@color/colorBackgroundRedDark"
+            android:text=" - "
+            android:fontFamily="@font/roboto_bold_condensed"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:paddingLeft="3dp"
+            android:textSize="8pt"
+            android:textColor="@color/colorDarkGrey"
+            android:text="Task Hari ini"
+            android:fontFamily="@font/roboto_bold"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lyOfflineInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_5dp"
+        android:layout_marginBottom="@dimen/margin_5dp"
+        android:paddingRight="10dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:paddingLeft="10dp"
+            android:textSize="8pt"
+            android:textColor="@color/colorDarkGrey"
+            android:text="Anda Sedang Offline.\nMohon Cek Koneksi Internet Anda"
+            android:fontFamily="@font/roboto_bold"/>
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_10dp"
+                android:background="@drawable/bg_layout_rounded_shadow"
+                android:padding="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|top"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="10pt"
+                    android:textStyle="bold"
+                    android:text="Toko"
+                    android:textColor="@color/colorDarkGrey" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/ly_validateToko"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_5dp"
+                        android:layout_marginRight="@dimen/margin_5dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ivValidasiToko"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:src="@drawable/ic_validasitoko"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/imgTaskExist"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/icons8_important_note"
+                            android:visibility="gone"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="67dp"
+                            android:layout_height="40dp"
+                            android:layout_margin="@dimen/margin_5dp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:gravity="center"
+                            android:text="Validasi Toko"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/ivValidasiToko"
+                            app:layout_constraintVertical_bias="0.0" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ly_addToko"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_5dp"
+                        android:layout_marginLeft="@dimen/margin_5dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:src="@drawable/ic_tambahtoko"
+                            android:layout_gravity="center"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/margin_5dp"
+                            android:gravity="center"
+                            android:text="Tambah Toko"
+                            android:fontFamily="@font/roboto_bold"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ly_auditToko"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_5dp"
+                        android:layout_marginLeft="@dimen/margin_5dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:src="@drawable/ic_audittoko"
+                            android:layout_gravity="center"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/margin_5dp"
+                            android:gravity="center"
+                            android:text="List Audit Toko"
+                            android:fontFamily="@font/roboto_bold"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ly_statusToko"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_5dp"
+                        android:layout_marginLeft="@dimen/margin_5dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:src="@drawable/ic_cekstatustoko"
+                            android:layout_gravity="center"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/margin_5dp"
+                            android:gravity="center"
+                            android:text="Status Toko"
+                            android:fontFamily="@font/roboto_bold"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/crudTest"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_5dp"
+                        android:layout_marginRight="@dimen/margin_5dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:src="@drawable/ic_tambahtoko" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/margin_5dp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:gravity="center"
+                            android:text="CRUD" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_10dp"
+                android:background="@drawable/bg_layout_rounded_shadow"
+                android:padding="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|top"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="10pt"
+                    android:textStyle="bold"
+                    android:text="Kabinet"
+                    android:textColor="@color/colorDarkGrey" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <LinearLayout
+                        android:id="@+id/ly_tarikMandiri"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_5dp"
+                        android:layout_marginLeft="@dimen/margin_5dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_tukarkabinet"
+                            android:layout_gravity="center"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/margin_5dp"
+                            android:gravity="center"
+                            android:text="Tarik Mandiri"
+                            android:fontFamily="@font/roboto_bold"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ly_tukarKabinet"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_5dp"
+                        android:layout_marginLeft="@dimen/margin_5dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_tukarkabinet"
+                            android:layout_gravity="center"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/margin_5dp"
+                            android:gravity="center"
+                            android:text="Tukar Kabinet"
+                            android:fontFamily="@font/roboto_bold"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ly_tarikKabinet"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_5dp"
+                        android:layout_marginLeft="@dimen/margin_5dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_tarikkabinet"
+                            android:layout_gravity="center"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/margin_5dp"
+                            android:gravity="center"
+                            android:text="Tarik Kabinet"
+                            android:fontFamily="@font/roboto_bold"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ly_cekStatusKabinet"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_5dp"
+                        android:layout_marginRight="@dimen/margin_5dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_checkstatusrequest" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/margin_5dp"
+                            android:gravity="center"
+                            android:text="Cek Status Kabinet"
+                            android:fontFamily="@font/roboto_bold"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_10dp"
+                android:background="@drawable/bg_layout_rounded_shadow"
+                android:padding="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|top"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="10pt"
+                    android:textStyle="bold"
+                    android:text="Lain lain"
+                    android:textColor="@color/colorDarkGrey" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <LinearLayout
+                        android:id="@+id/lyDatabaseToko"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_5dp"
+                        android:layout_marginLeft="@dimen/margin_5dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_dabasetoko"
+                            android:layout_gravity="center"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/margin_5dp"
+                            android:gravity="center"
+                            android:text="List Database Toko"
+                            android:fontFamily="@font/roboto_bold"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lyDatabaseHunter"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_5dp"
+                        android:layout_marginLeft="@dimen/margin_5dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_listauditor"
+                            android:layout_gravity="center"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/margin_5dp"
+                            android:gravity="center"
+                            android:text="Database Hunter"
+                            android:fontFamily="@font/roboto_bold"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ly_profil"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_5dp"
+                        android:layout_marginLeft="@dimen/margin_5dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_profile"
+                            android:layout_gravity="center"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/margin_5dp"
+                            android:gravity="center"
+                            android:text="Profil Saya"
+                            android:fontFamily="@font/roboto_bold"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ly_logout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_5dp"
+                        android:layout_marginLeft="@dimen/margin_5dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_logout"
+                            android:layout_gravity="center"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/margin_5dp"
+                            android:gravity="center"
+                            android:text="Logout"
+                            android:fontFamily="@font/roboto_bold"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

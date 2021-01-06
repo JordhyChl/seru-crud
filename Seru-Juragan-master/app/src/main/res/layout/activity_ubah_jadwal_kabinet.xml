@@ -1,0 +1,981 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.kabinet.status.UbahJadwalKabinetActivity">
+
+    <include layout="@layout/view_toolbar_primary_right"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/desc_cabinet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/colorBlack"
+                android:paddingLeft="30dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto_bold"
+                android:background="@color/customGrey2"
+                android:text="Detail Kabinet"/>
+
+            <LinearLayout
+                android:id="@+id/sec_ket_kabinet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvRTM"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:textSize="18sp"
+                        android:textColor="@color/text_default"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="RTM - 1234567890"/>
+
+                    <TextView
+                        android:id="@+id/btnDetailRequest"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="18sp"
+                        android:paddingTop="3dp"
+                        android:paddingBottom="3dp"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:background="@drawable/background_rectangle_round_green"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/colorWhite1"
+                        android:text="Detail"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyKabinet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:paddingTop="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/bg_rect_border_red">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:id="@+id/lyCabinetCode"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginRight="3dp"
+                                android:text="Kode Kabinet"
+                                android:textSize="12dp"
+                                android:textColor="#000000"
+                                android:fontFamily="@font/roboto_bold"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="1dp"
+                                android:text=" :"
+                                android:textSize="12dp"
+                                android:textColor="#000000"
+                                android:fontFamily="@font/roboto_bold"/>
+                            <TextView
+                                android:id="@+id/tvCabinetCode"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text=" - "
+                                android:textSize="12dp"
+                                android:textColor="#000000"
+                                android:fontFamily="@font/roboto_bold"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/lyCabinetType"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginRight="3dp"
+                                android:text="Tipe Kabinet"
+                                android:textSize="12dp"
+                                android:textColor="#000000"
+                                android:fontFamily="@font/roboto_bold"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="1dp"
+                                android:text=" :"
+                                android:textSize="12dp"
+                                android:textColor="#000000"
+                                android:fontFamily="@font/roboto_bold"/>
+                            <TextView
+                                android:id="@+id/tvCabinetType"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text=" - "
+                                android:textSize="12dp"
+                                android:textColor="#000000"
+                                android:fontFamily="@font/roboto_bold"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/lyQRCode"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginRight="3dp"
+                                android:text="QR Code"
+                                android:textSize="12dp"
+                                android:textColor="#000000"
+                                android:fontFamily="@font/roboto_bold"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="1dp"
+                                android:text=" :"
+                                android:textSize="12dp"
+                                android:textColor="#000000"
+                                android:fontFamily="@font/roboto_bold"/>
+                            <TextView
+                                android:id="@+id/tvQrCode"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text=" - "
+                                android:textSize="12dp"
+                                android:textColor="#000000"
+                                android:fontFamily="@font/roboto_bold"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lyQRCodeCabinet"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.5">
+                        <ImageView
+                            android:id="@+id/imgQrCode"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/desc_change_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/colorBlack"
+                android:paddingLeft="30dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto_bold"
+                android:background="@color/customGrey2"
+                android:text="Ubah Jadwal Pemindahan Kabinet"/>
+
+            <LinearLayout
+                android:id="@+id/sec_changes_schedule"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_rect_border_red">
+
+                    <LinearLayout
+                        android:id="@+id/lyDateRecall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginRight="3dp"
+                            android:text="Tanggal Penarikan"
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="1dp"
+                            android:text=" :"
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+                        <TextView
+                            android:id="@+id/tvDateRecallInfo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:text=" - "
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/lyDriverNumberRecall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginRight="3dp"
+                            android:text="Nomor Driver"
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="1dp"
+                            android:text=" :"
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+                        <TextView
+                            android:id="@+id/tvDriverNumberRecall"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:text=" - "
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/lyCarNumberRecall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginRight="3dp"
+                            android:text="Nomor Mobil"
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="1dp"
+                            android:text=" :"
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+                        <TextView
+                            android:id="@+id/tvCarNumberRecall"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:text=" - "
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:paddingTop="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/lyJadwalTarik"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_5dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:layout_marginTop="@dimen/margin_5dp"
+                            android:text="Tanggal Perkiraan Tarik : "
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+
+                        <TextView
+                            android:id="@+id/tvSelectDateRecall"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.7"
+                            android:padding="5dp"
+                            android:text="Pilih Tanggal"
+                            android:fontFamily="@font/roboto_bold"
+                            android:textColor="@color/material_light_black"
+                            android:background="@drawable/bg_form_rounded_transparent"
+                            android:layout_gravity="center"
+                            android:gravity="center"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="Nomor Driver"
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+                        <EditText
+                            android:id="@+id/edtNoDriverTarik"
+                            android:layout_width="0dp"
+                            android:layout_height="35dp"
+                            android:layout_weight="1.7"
+                            android:textColor="#000000"
+                            android:inputType="phone"
+                            android:background="@drawable/bg_form_rounded_transparent"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_5dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="Nomor Mobil"
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+                        <EditText
+                            android:id="@+id/edtNoMobilTarik"
+                            android:layout_width="0dp"
+                            android:layout_height="35dp"
+                            android:layout_weight="1.7"
+                            android:textColor="#000000"
+                            android:maxLength="10"
+                            android:background="@drawable/bg_form_rounded_transparent"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:background="@color/colorGrey6"/>
+
+                <LinearLayout
+                    android:id="@+id/lySuratJalan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:paddingTop="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_rect_border_red">
+
+                    <LinearLayout
+                        android:id="@+id/lyDateReq"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginRight="3dp"
+                            android:text="Tanggal Pengiriman"
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="1dp"
+                            android:text=" :"
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+                        <TextView
+                            android:id="@+id/tvDateShippingInfo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:text=" - "
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/lyDriverNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginRight="3dp"
+                            android:text="Nomor Driver"
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="1dp"
+                            android:text=" :"
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+                        <TextView
+                            android:id="@+id/tvDriverNumberShipping"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:text=" - "
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/lyCarNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginRight="3dp"
+                            android:text="Nomor Mobil"
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="1dp"
+                            android:text=" :"
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+                        <TextView
+                            android:id="@+id/tvCarNumberShipping"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:text=" - "
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/lyJadwalKirim"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_5dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:layout_marginTop="@dimen/margin_5dp"
+                            android:layout_marginRight="3dp"
+                            android:text="Tanggal Perkiraan Kirim : "
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+
+                        <TextView
+                            android:id="@+id/tvSelectDateSent"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.7"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:text="Pilih Tanggal"
+                            android:fontFamily="@font/roboto_bold"
+                            android:textColor="@color/material_light_black"
+                            android:background="@drawable/bg_form_rounded_transparent"
+                            android:layout_gravity="center"
+                            android:gravity="center"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="Nomor Driver"
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+                        <EditText
+                            android:id="@+id/edtNoDriverKirim"
+                            android:layout_width="0dp"
+                            android:layout_height="35dp"
+                            android:layout_weight="1.7"
+                            android:textColor="#000000"
+                            android:inputType="phone"
+                            android:background="@drawable/bg_form_rounded_transparent"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_5dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="Nomor Mobil"
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+                        <EditText
+                            android:id="@+id/edtNoMobilKirim"
+                            android:layout_width="0dp"
+                            android:layout_height="35dp"
+                            android:layout_weight="1.7"
+                            android:textColor="#000000"
+                            android:maxLength="10"
+                            android:background="@drawable/bg_form_rounded_transparent"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:background="@color/colorGrey6"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:layout_marginRight="@dimen/margin_10dp"
+                android:layout_marginLeft="@dimen/margin_10dp"
+                android:orientation="horizontal"
+                tools:ignore="MissingConstraints">
+                <Button
+                    android:id="@+id/btnCancel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_rectangle_round_dark_grey"
+                    android:layout_marginRight="10dp"
+                    android:textColor="@color/colorWhite1"
+                    android:text="Batal" />
+
+                <Button
+                    android:id="@+id/btnSubmitRequest"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_rectangle_round_red"
+                    android:textColor="@color/colorWhite1"
+                    android:text="Kirim"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.core.widget.NestedScrollView
+        android:visibility="gone"
+        android:id="@+id/svSuccesSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textSize="18sp"
+                android:textColor="@color/colorBlack"
+                android:layout_marginTop="@dimen/margin_25dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto_bold"
+                android:background="@color/customGrey2"
+                android:text="TERIMA KASIH"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textSize="18sp"
+                android:textColor="@color/colorGrey1"
+                android:layout_marginTop="@dimen/margin_5dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="5dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Perubahan Jadwal Untuk"/>
+
+            <TextView
+                android:id="@+id/tvRTMConfirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textSize="18sp"
+                android:textColor="@color/colorBlack"
+                android:layout_marginTop="@dimen/margin_5dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Permintaan RTM - XXXXXXXXXXXXXX"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textSize="22sp"
+                android:textColor="#009688"
+                android:layout_marginTop="@dimen/margin_5dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Berhasil Dikirim"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textSize="18sp"
+                android:textColor="@color/colorBlack"
+                android:layout_marginTop="@dimen/margin_5dp"
+                android:layout_marginLeft="@dimen/margin_20dp"
+                android:layout_marginRight="@dimen/margin_20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto_bold"
+                android:text=" Selanjutnya silahkan melihat status di menu STATUS KABINET untuk melihat detail transaksi "/>
+
+            <LinearLayout
+                android:id="@+id/lyInfoKabinet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_3dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:padding="@dimen/padding_5dp"
+                android:background="@drawable/bg_rect_border_red"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:id="@+id/lyOutletExist2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginRight="3dp"
+                            android:text="Toko Asal"
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="1dp"
+                            android:text=" :"
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+                        <TextView
+                            android:id="@+id/tvOutletExist2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text=" - "
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/lyCabinetCode2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginRight="3dp"
+                            android:text="Kode Kabinet"
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="1dp"
+                            android:text=" :"
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+                        <TextView
+                            android:id="@+id/tvCabinetCode2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text=" - "
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/lyCabinetType2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginRight="3dp"
+                            android:text="Tipe Kabinet"
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="1dp"
+                            android:text=" :"
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+                        <TextView
+                            android:id="@+id/tvCabinetType2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text=" - "
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/lyQRCode2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginRight="3dp"
+                            android:text="QR Code"
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="1dp"
+                            android:text=" :"
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+                        <TextView
+                            android:id="@+id/tvQrCode2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text=" - "
+                            android:textSize="12dp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/roboto_bold"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/imgQrCode2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/margin_5dp"
+                        android:layout_gravity="center_vertical"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:layout_marginRight="@dimen/margin_10dp"
+                android:layout_marginLeft="@dimen/margin_10dp"
+                android:orientation="horizontal"
+                tools:ignore="MissingConstraints">
+
+                <Button
+                    android:id="@+id/btnFinish"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_rectangle_round_red"
+                    android:textColor="@color/colorWhite1"
+                    android:text="Kembali ke Daftar Status"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/emptyPage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite1"
+        android:gravity="center"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:src="@drawable/ic_generic_error_shot"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/offlinePage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite1"
+        android:gravity="center"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="75dp"
+            android:layout_marginBottom="75dp"
+            android:src="@drawable/ic_offline"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="AppTheme.Light" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorWhite1</item>
+        <item name="colorPrimaryDark">@color/colorGrey5</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/colorWhite1</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="android:actionModeBackground">@color/colorWhite1</item>
+        <item name="actionModeBackground">@color/colorWhite1</item>
+    </style>
+    <style name="AppTheme.Transparent" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorTransparent</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/colorTransparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="android:actionModeBackground">@color/colorTransparent</item>
+        <item name="actionModeBackground">@color/colorTransparent</item>
+    </style>
+    <style name="AppTheme.Transparent.Light" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorWhite1</item>
+        <item name="colorPrimaryDark">@color/colorGrey5</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/colorTransparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="android:actionModeBackground">@color/colorTransparent</item>
+        <item name="actionModeBackground">@color/colorTransparent</item>
+    </style>
+    <style name="AppTheme.Transparent.Dark" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorWhite1</item>
+        <item name="colorPrimaryDark">@color/colorGrey5</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/colorTransparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="android:actionModeBackground">@color/colorTransparent</item>
+        <item name="actionModeBackground">@color/colorTransparent</item>
+    </style>
+    <style name="AppTheme.Dialog.NoTitle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="AppTheme.Dialog.NoTitle.Rounded" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/bg_window_dialog_rounded</item>
+        <item name="windowFixedHeightMajor">75%</item>
+    </style>
+    <style name="AppTheme.Preload" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimaryDark">@color/colorTransparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/layout_preload_screen</item>
+    </style>
+    <style name="AppTheme.Main" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
+    <style name="DefaultFontStyle">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+    </style>
+
+    <style name="TextNoScaleTiny" parent="DefaultFontStyle">
+        <item name="android:textSize" tools:ignore="SpUsage">10dp</item>
+    </style>
+    <style name="TextNoScaleSmall" parent="DefaultFontStyle">
+        <item name="android:textSize" tools:ignore="SpUsage">12dp</item>
+    </style>
+    <style name="TextNoScaleNormal" parent="DefaultFontStyle">
+        <item name="android:textSize" tools:ignore="SpUsage">14dp</item>
+    </style>
+    <style name="TextNoScaleMedium" parent="DefaultFontStyle">
+        <item name="android:textSize" tools:ignore="SpUsage">16dp</item>
+    </style>
+    <style name="TextNoScaleLarge" parent="DefaultFontStyle">
+        <item name="android:textSize" tools:ignore="SpUsage">18dp</item>
+    </style>
+    <style name="TextNoScaleExtraLarge" parent="DefaultFontStyle">
+        <item name="android:textSize" tools:ignore="SpUsage">22dp</item>
+    </style>
+    <style name="TextNoScaleXXLarge" parent="DefaultFontStyle">
+        <item name="android:textSize" tools:ignore="SpUsage">24dp</item>
+    </style>
+    <style name="TextNoScaleXXXLarge" parent="DefaultFontStyle">
+        <item name="android:textSize" tools:ignore="SpUsage">26dp</item>
+    </style>
+
+    <style name="DividerHorizontal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/height_divider</item>
+        <item name="android:background">@color/colorDivider</item>
+    </style>
+    <style name="DividerVertical">
+        <item name="android:layout_width">@dimen/height_divider</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/colorDivider</item>
+    </style>
+    <style name="DividerEditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/colorTransparentDark10</item>
+    </style>
+
+    <!--    <style name="ToolbarElevation">-->
+    <!--        <item name="android:layout_width">match_parent</item>-->
+    <!--        <item name="android:layout_height">@dimen/elevation_height</item>-->
+    <!--        <item name="android:background">@drawable/elevation_top</item>-->
+    <!--        <item name="android:visibility">gone</item>-->
+    <!--    </style>-->
+    <style name="ToolbarMenu" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textSize" tools:ignore="SpUsage">15dp</item>
+    </style>
+    <style name="ToolbarTitle" parent="DefaultFontStyle">
+        <item name="android:textSize" tools:ignore="SpUsage">20dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="ToolbarLight">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/colorWhite1</item> <!-- action_bar_color -->
+        <item name="android:minHeight">?attr/actionBarSize</item>
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.Light</item>
+    </style>
+    <style name="ToolbarLight.Primary">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/colorPrimary</item> <!-- action_bar_color -->
+        <item name="android:minHeight">40dp</item>
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.Light</item>
+    </style>
+    <style name="ToolbarTitle.Light" parent="ToolbarTitle">
+        <item name="android:textColor">@color/colorGrey2</item> <!-- action_bar_title_color -->
+    </style>
+    <style name="ToolbarTitle.Primary" parent="ToolbarTitle">
+        <item name="android:textColor">@color/colorPrimary</item> <!-- action_bar_title_color -->
+    </style>
+    <style name="ToolbarTitle.Dark" parent="ToolbarTitle">
+        <item name="android:textColor">@color/colorWhite1</item> <!-- action_bar_title_color -->
+    </style>
+
+    <!-- StaticBottomSheet -->
+    <style name="MaterialDialogSheet" parent="@android:style/Theme.Dialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowAnimationStyle">@style/MaterialDialogSheetAnimation</item>
+    </style>
+    <style name="MaterialDialogSheetAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_in_bottom_d200</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_bottom_d200</item>
+    </style>
+
+    <!-- Keyboard Edit Text -->
+    <!--    <style name="TextInputChat" parent="Widget.AppCompat.EditText">-->
+    <!--        <item name="android:background">@color/colorTransparent</item>-->
+    <!--        <item name="android:paddingTop">@dimen/padding_7dp</item>-->
+    <!--        <item name="android:paddingBottom">@dimen/padding_7dp</item>-->
+    <!--        <item name="android:layout_gravity">center</item>-->
+    <!--        <item name="android:maxLines">5</item>-->
+    <!--        <item name="android:inputType">textCapSentences|textMultiLine</item>-->
+    <!--        <item name="android:hint">@string/keyboardedittext_hint</item>-->
+    <!--        <item name="android:fontFamily">@font/sanfrancisco_pro_regular</item>-->
+    <!--        <item name="android:textColorHint">@color/colorTextHint</item>-->
+    <!--        <item name="android:textColor">@color/colorTextPrimary</item>-->
+    <!--        <item name="android:textSize" tools:ignore="SpUsage">18dp</item>-->
+    <!--    </style>-->
+</resources>

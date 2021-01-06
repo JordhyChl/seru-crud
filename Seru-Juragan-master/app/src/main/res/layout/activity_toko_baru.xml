@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.toko.tokobaru.TokoBaruActivity">
+
+    <include layout="@layout/view_toolbar_primary_right"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/padding_5dp"
+        android:paddingBottom="@dimen/padding_5dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:layout_gravity="top|center"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_shop_to_validate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_5dp"
+            android:textSize="15sp"
+            android:textColor="@color/colorWhite1"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Ringkasan total toko yang harus divalidasi hingga hari ini : 275"/>
+        <TextView
+            android:id="@+id/tvdateToday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/colorWhite1"
+            android:textStyle="bold"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Jumat, 6 Desember 2019"/>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#F9F9F9"/>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_list_kecamatan"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            tools:listitem="@layout/item_kecamatan"
+            tools:ignore="MissingConstraints" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+</LinearLayout>

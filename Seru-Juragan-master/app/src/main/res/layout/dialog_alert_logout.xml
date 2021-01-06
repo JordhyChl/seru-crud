@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_layout_rounded_shadow"
+    android:padding="@dimen/padding_15dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/alert_logout"
+        android:gravity="center"
+        android:textSize="18sp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
+        android:paddingEnd="20dp"
+        android:gravity="end"
+        android:paddingTop="2dp">
+
+        <TextView
+            android:id="@+id/btnNoLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:text="TIDAK"
+            android:textSize="8pt"
+            android:textColor="@color/material_red_500"/>
+
+        <TextView
+            android:id="@+id/btnYesLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="YA"
+            android:textSize="8pt"
+            android:textColor="@color/material_red_500"/>
+    </LinearLayout>
+</LinearLayout>

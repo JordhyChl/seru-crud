@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Bottom Navigation -->
+    <dimen name="bottom_navigation_notification_size">12dp</dimen>
+    <dimen name="bottom_navigation_height">56dp</dimen>
+    <dimen name="bottom_navigation_small_inactive_min_width">64dp</dimen>
+    <dimen name="bottom_navigation_small_inactive_max_width">96dp</dimen>
+    <dimen name="bottom_navigation_notification_elevation">1dp</dimen>
+
+    <dimen name="margin_2dp">2dp</dimen>
+    <dimen name="margin_5dp">5dp</dimen>
+    <dimen name="margin_7dp">7dp</dimen>
+    <dimen name="margin_10dp">10dp</dimen>
+    <dimen name="margin_12dp">12dp</dimen>
+    <dimen name="margin_15dp">15dp</dimen>
+    <dimen name="margin_20dp">20dp</dimen>
+    <dimen name="margin_25dp">25dp</dimen>
+    <dimen name="margin_40dp">40dp</dimen>
+
+    <dimen name="padding_2dp">2dp</dimen>
+    <dimen name="padding_3dp">3dp</dimen>
+    <dimen name="padding_5dp">5dp</dimen>
+    <dimen name="padding_7dp">7dp</dimen>
+    <dimen name="padding_10dp">10dp</dimen>
+    <dimen name="padding_12dp">12dp</dimen>
+    <dimen name="padding_15dp">15dp</dimen>
+    <dimen name="padding_20dp">20dp</dimen>
+    <dimen name="padding_25dp">25dp</dimen>
+    <dimen name="padding_30dp">30dp</dimen>
+
+    <dimen name="size_view_5dp">5dp</dimen>
+    <dimen name="size_view_10dp">10dp</dimen>
+    <dimen name="size_view_15dp">15dp</dimen>
+    <dimen name="size_view_20dp">20dp</dimen>
+    <dimen name="size_view_25dp">25dp</dimen>
+    <dimen name="size_view_30dp">30dp</dimen>
+    <dimen name="size_view_35dp">35dp</dimen>
+    <dimen name="size_view_40dp">40dp</dimen>
+    <dimen name="size_view_45dp">45dp</dimen>
+    <dimen name="size_view_50dp">50dp</dimen>
+    <dimen name="size_view_55dp">55dp</dimen>
+    <dimen name="size_view_60dp">60dp</dimen>
+    <dimen name="size_view_65dp">65dp</dimen>
+    <dimen name="size_view_70dp">70dp</dimen>
+    <dimen name="size_view_75dp">75dp</dimen>
+    <dimen name="size_view_80dp">80dp</dimen>
+    <dimen name="size_view_100dp">100dp</dimen>
+    <dimen name="size_view_120dp">120dp</dimen>
+    <dimen name="size_view_200dp">200dp</dimen>
+    <dimen name="size_view_220dp">220dp</dimen>
+    <dimen name="size_view_240dp">240dp</dimen>
+
+    <dimen name="size_avatar_30dp">30dp</dimen>
+    <dimen name="size_avatar_35dp">35dp</dimen>
+    <dimen name="size_avatar_40dp">40dp</dimen>
+    <dimen name="size_avatar_45dp">45dp</dimen>
+    <dimen name="size_avatar_50dp">50dp</dimen>
+    <dimen name="size_avatar_60dp">60dp</dimen>
+    <dimen name="size_avatar_65dp">65dp</dimen>
+    <dimen name="size_avatar_100dp">100dp</dimen>
+    <dimen name="size_avatar_120dp">120dp</dimen>
+
+    <dimen name="elevation_height">5dp</dimen>
+    <dimen name="bottom_elevation_height">5dp</dimen>
+    <dimen name="height_divider">0.5dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="progressBarInnerRadiusRatio50">2.5</dimen>
+    <dimen name="progressBarThickness50">5dp</dimen>
+
+    <dimen name="progressBarInnerRadiusRatio">2.6</dimen>
+    <dimen name="progressBarThickness">5dp</dimen>
+
+    <dimen name="progressBarInnerRadiusRatioSmall">2.4</dimen>
+    <dimen name="progressBarThicknessSmall">3dp</dimen>
+
+    <!-- CollapsingToolbar -->
+    <dimen name="collapsingBarHeight">300dp</dimen>
+    <dimen name="header_view_start_text_size">24sp</dimen>
+    <dimen name="header_view_end_text_size">18sp</dimen>
+</resources>

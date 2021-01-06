@@ -1,0 +1,83 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="app_name" translatable="false">Juragan</string>
+
+    <string name="untitled_home"> </string>
+
+    <string name="title_bottom_nav_1">Home</string>
+    <string name="title_bottom_nav_2">Verify</string>
+    <string name="title_bottom_nav_3">Rejectd</string>
+    <string name="title_bottom_nav_4">Setting</string>
+
+    <!-- Keyword-->
+    <string name="app_warning"> Hanya untuk digunakan kalangan Internal </string>
+    <string name="app_build_year"> &#169; 2020 </string>
+
+    <!-- FORM - KETERANGAN TOKO-->
+    <string name="jenis">Jenis Toko</string>
+    <string name="status">Status Kepemilikan</string>
+    <string name="tipe_jalan">Tipe jalan</string>
+    <string name="radius">Radius 50 – 100(m) dekat dengan?</string>
+    <string name="jual_exist">Sudah berjualan es cream?</string>
+    <string name="kulkas_exist">Ada kulkas di Rumah?</string>
+    <string name="beli_paket">Bersedia membeli paket perdana secara tunai?</string>
+    <string name="freezer">Tersedia tempat freezer?</string>
+    <string name="listrik">Kapasitas listrik (VA)</string>
+    <string name="blackout">Frekuensi listrik padam(1 bulan)</string>
+    <!-- Permissions -->
+    <string name="permission_rationale_location">Access to the location service is required to demonstrate the \'my location\' feature, which shows your current location on the map.</string>
+    <string name="location_permission_denied">This sample requires location permission to enable the \'my location\' layer. Please try again and grant access to use the location.\nIf the permission has been permanently denied, it can be enabled from the System Settings &gt; Apps &gt; \'Google Maps API Demos\'.</string>
+    <string name="permission_required_toast">Location permission is required for this demo.</string>
+    <string name="storage_permission_required">Perangkat ini membutuhkan izin untuk mengakses storage Anda</string>
+    <!--APP MODULE TITLE-->
+    <string name="camera">Kamera</string>
+    <string name="select_source">Pilih Sumber</string>
+    <!--    LOG-->
+    <string name="msg_token_fmt" translatable="false">InstanceID Token: %s</string>
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <!-- APP ALERT -->
+    <string name="warn_syarat">Pastikan kembali semua data benar dan sesuai sebelum melakukan konfirmasi, karena data akan menjadi Effective Call (EC)</string>
+    <string name="alert_subform_uncomplete">Mohon isi semua form yang tersedia, Anda dapat memilih lebih dari 1 untuk Es krim dan Kulkas</string>
+    <string name="alert_form_uncomplete">Mohon isi semua form yang tersedia dan upload semua Foto.</string>
+    <string name="alert_shop_exist">Mitra dengan nomor telepon tersebut telah terdaftar dengan ID Toko berikut : </string>
+    <string name="alert_device_rooted">Perangkat Anda terindikasi di "ROOT" atau menggunakan pengaturan Ilegal. Bila Anda tidak merasa melakukan hal tersebut, Harap menghubungi Custumer Service. </string>
+    <string name="alert_device_mocked">Perangkat Anda terindikasi menggunakan "FAKE GPS" atau pengaturan Ilegal. Bila Anda tidak merasa melakukan hal tersebut, Harap menghubungi Custumer Service. </string>
+    <string name="alert_device_offline">
+        Perangkat Anda terindikasi Offline(tidak terkoneksi internet). Pastikan Anda terkoneksi internet stabil, dan Ulangi submit data kembali.\n
+        Atau klik "LANJUTKAN" untuk otomatis submit jika device Anda telah kembali terkoneksi Internet.
+    </string>
+    <string name="alert_logout">Apakah Anda yakin ingin keluar(logout)?</string>
+    <!-- APP CONTENT -->
+    <string name="keterangan">
+        - Proses approval akhir akan berada di pihak Unilever.\n
+        - Jadwal usul pengiriman cabinet dilakukan minimal 5 hari kerja dari tanggal validasi dan dapat berubah sesuai dengan prioritas dari Unilever.\n
+        - Pastikan semua data benar dan saat pengiriman data validasi Juragan berada maksimum 10 meter dari lokasi dan GPS aktif</string>
+    <string name="rationale_location">This app needs access to your location to know where you are.</string>
+    <!-- APP SPINNER RESOURCE -->
+    <string-array name="kecamatan_list">
+        <item>Mampang Prapatan</item>
+        <item>Tegal Parang</item>
+        <item>Pancoran</item>
+        <item>Kemanggisan</item>
+        <item>Warung Buncit</item>
+    </string-array>
+
+    <string-array name="keluruhan_list">
+        <item>Mampang Prapatan</item>
+        <item>Tegal Parang</item>
+        <item>Pancoran</item>
+        <item>Kemanggisan</item>
+        <item>Warung Buncit</item>
+    </string-array>
+
+    <string-array name="add_status_validasi">
+        <item>Approve</item>
+        <item>Tunda</item>
+    </string-array>
+
+    <string-array name="update_status_validasi">
+        <item>Tunda</item>
+        <item>Approve</item>
+        <item>Batal</item>
+    </string-array>
+
+</resources>

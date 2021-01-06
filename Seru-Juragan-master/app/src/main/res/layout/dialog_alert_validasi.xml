@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/padding_15dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="M I T R A  T E R D A F T A R"
+        android:gravity="center"
+        android:textSize="18sp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:paddingLeft="@dimen/padding_5dp"
+        android:paddingRight="@dimen/padding_5dp"
+        android:layout_gravity="center_horizontal|center"
+        android:lineSpacingExtra="4dp"
+        android:text="@string/alert_shop_exist"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="@dimen/margin_10dp"
+        android:layout_gravity="center_horizontal|center"
+        android:lineSpacingExtra="4dp"
+        android:text=""
+        android:textStyle="bold"
+        android:id="@+id/tvAlertID"/>
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="12dp"-->
+<!--        android:layout_gravity="center_horizontal|center"-->
+<!--        android:lineSpacingExtra="4dp"-->
+<!--        android:text="@string/alert_member_succes_warning"/>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="2dp">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_rectangle_round_dark_grey"
+            android:text="KELUAR"
+            android:textColor="@color/colorWhite1"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/margin_5dp"
+            android:id="@+id/btnAlertExit"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_rectangle_round_red"
+            android:text="VALIDASI"
+            android:textColor="@color/colorWhite1"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/margin_5dp"
+            android:id="@+id/btnAlertValidasi"/>
+    </LinearLayout>
+</LinearLayout>
